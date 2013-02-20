@@ -1,0 +1,4 @@
+ahk
+===
+
+AutoHotKey script
