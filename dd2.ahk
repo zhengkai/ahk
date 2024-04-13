@@ -2,11 +2,16 @@
 #SingleInstance Force
 
 Hotkey "F1", Start
-Hotkey "F2", Stop
-Hotkey "F3", ShowActiveWinName
+Hotkey "F2", Fast
+Hotkey "F3", Stop
+Hotkey "F5", ShowActiveWinName
 
 Start(k) {
     SetTimer(SendKey, 60000)
+}
+
+Fast(k) {
+    SetTimer(SendKey, 6000)
 }
 
 Stop(k) {
@@ -14,7 +19,9 @@ Stop(k) {
 }
 
 ShowActiveWinName(k) {
-    MsgBox "Current Window " WinGetTitle("A")
+    s := WinGetTitle("A")
+    MsgBox "Current Window: " s
+    A_Clipboard := s
 }
 
 SendKey() {
